@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Iteration</title>
+  </head>
+  <body>
+    <div id="app">
+      <h3>Fallen Legends</h3>
+      <span> New Legend is: {{ newLegend }} </span>
+        <button @click="addLegend()"> ADD </button>
+      <br>
+      <input type="text" v-model="newLegend" placeholder="Edit me"
+      @keyup.enter="addLegend()">
+        <ul>
+          <li v-for="legend in legends">
+            {{ legend }}
+          </li>
+        </ul>
+
+        </div>
+        <script src="vue.js"></script>
+        <script>
+          new Vue({
+            el: '#app',
+            data: {
+              newLegend: "",
+              legends: [
+                "Man1",
+                "Man2",
+                "Man3",
+                "Man4"
+              ]
+            },
+            methods: {
+              addLegend: function(){
+                this.legends.push(this.newLegend)
+                this.newLegend=''
+            }
+          }
+        })
+        </script>
+  </body>
+</html>
