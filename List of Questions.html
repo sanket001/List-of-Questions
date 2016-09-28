@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+    <body>
+    <div id="app">
+      <title>Answer the Following</title>
+        <h1>Quiz</h1>
+          <ul>
+            <li v-for="question in questions">
+              {{ question }}
+            </li>
+          </ul>
+        </div>
+    <script src="vue.js"></script>
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+        questions: [
+            "Question 1",
+            "Question 2",
+            "Question 3",
+            "Question 4",
+            "Question 5"
+          ]
+      }
+    })
+    </script>
+  </body>
+</html>
